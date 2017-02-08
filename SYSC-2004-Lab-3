@@ -1,0 +1,113 @@
+public class BasicArray {
+
+	//Step two
+	//Create a method that accepts an array and sums it's elements. 
+	public int sumArray(int[] array){
+		int total = 0;
+		for (int i=0; i<array.length; i++){
+			total += array[i];
+		}
+		return total;
+	}
+
+	//Step 5 
+	public int[] getEvenNumbers(int num){
+		int numOfEven = 0;
+		
+		//If num is less than 0.
+		if (num < 0){
+			return null;
+		}
+		//Find number of evens to set array size equal to.
+		for(int i=0; i<num; i++){
+			numOfEven +=1;
+		}
+		
+		int[] evenNum = new int[numOfEven]; //Create array.
+		
+		int j = 0; //Even number to add to evenNum array.
+		//Loop through numOfEven and set even numbers into evenNum array.
+		for(int i=0; i<numOfEven; i++){
+			j+=2;
+			evenNum[i] = j;
+		}
+		return evenNum;
+	}
+
+	//Step 6
+	public int[] getPrimeNumbers(int num){
+		if (num < 0){
+			return null;
+		}
+		int[] array = {1,2,3,4,5};
+		return array;
+	}
+	
+	//Step 7
+	public double[] findSmallestAndLargest(double arr[]){
+		if (arr == null){
+			return null;
+		}		
+		double[] rtn = new double[2];//Return array.
+		double largest = arr[0];//Largest value in passed array.
+		double smallest = arr[0];//Smallest value in passed array.
+		
+
+		
+		for (int i=0; i<arr.length; i++){
+			if (arr[i]>largest){
+				largest = arr[i];
+			}
+			if (arr[i]<smallest){
+				smallest = arr[i];
+			}
+		}
+		
+		return rtn;
+	}
+	
+	//Step 8
+	public String findDuplicate(String names[]){
+		if (names == null){
+			return null;
+		}
+		String rtn = "";
+		for (int i=0; i<names.length; i++){			//First loop.
+			for (int j=0; i<names.length; j++){		//Second Loop.
+				if (names[i] == names[j]){			//Compare first and Second.
+					rtn = names[i];
+				}
+			}
+		}
+		return rtn;
+	}
+	
+	//Step 9
+	public int[] remove(int array[], int remove){
+		if (array == null){
+			return null;
+		}
+		
+		int[] newArray = new int[(array.length)-1]; //New array without integer to remove
+		
+		int j = 0;
+		for (int i=0; i<array.length; i++){
+			if (array[i] != remove){
+				newArray[j] = array[i];
+				j++;
+			}
+		}
+		return newArray; 
+	}
+
+	//Step 4
+	public static void main(String[] args){
+		//int[] array = {1,2,3,4,5};
+		
+		//BasicArray obj = new BasicArray();
+		//int valueToOutput = object.sumArray(array);
+		
+		//System.out.println("The sum of the array is "+obj.sumArray(array)); //valueToOutput);
+	}
+
+}
